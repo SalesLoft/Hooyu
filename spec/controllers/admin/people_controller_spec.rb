@@ -12,4 +12,12 @@ RSpec.describe Admin::PeopleController, :type => :controller do
       expect(assigns["people"].count).to eq(Person.count)
     end
   end
+
+  describe "#destroy" do
+    it "deletes a person", vcr: { cassette_name: "admin-people-controller_destroy", match_requests_on: [:body] } do
+      expect {
+        delete :destroy, id: people.last.id
+      }.to change{ Person.count }.by(-1)
+    end
+  end
 end
