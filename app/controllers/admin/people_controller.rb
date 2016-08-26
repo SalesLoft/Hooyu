@@ -1,6 +1,6 @@
 class Admin::PeopleController < Admin::BaseController
   def index
-    @people = Person.all
+    @people = Person.all.order(:last_name)
   end
 
   def destroy
