@@ -55,60 +55,54 @@ class PersonSetup extends React.Component {
     var imageRequired = !this.props.details.image_url;
 
     return (
-      <div className="row">
-        <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
-          <div className="panel panel-default">
-            <div className="panel-heading">
-              <div className="panel-title">{ title }</div>
-            </div>
+        <div className="panel">
+          <div className="panel-heading bg-blue">{ title }</div>
 
-            <div className="panel-body">
-              <form method="POST" url={this.props.saveUrl} encType="multipart/form-data">
-                <input type="hidden" name="authenticity_token" value={this.state.token} />
+          <div className="panel-body">
+            <form method="POST" url={this.props.saveUrl} encType="multipart/form-data">
+              <input type="hidden" name="authenticity_token" value={this.state.token} />
 
-                <div className="form-group">
-                  <label>Email Address</label>
-                  <input type="email" name="email" className="form-control" readOnly={true} value={this.state.email} />
-                </div>
+              <div className="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" className="form-control" readOnly={true} value={this.state.email} />
+              </div>
 
-                <div className="form-group">
-                  <label>Organization</label>
-                  <input type="text" className="form-control" readOnly={true} value={this.state.organization_name} />
-                </div>
+              <div className="form-group">
+                <label>Organization</label>
+                <input type="text" className="form-control" readOnly={true} value={this.state.organization_name} />
+              </div>
 
-                <div className="form-group">
-                  <label htmlFor="first_name">First Name</label>
-                  <input type="text" name="first_name" className="form-control" id="first_name"
-                    value={this.state.first_name} onChange={this.setFirstName} required={true} />
-                </div>
+              <div className="form-group">
+                <label htmlFor="first_name">First Name</label>
+                <input type="text" name="first_name" className="form-control" id="first_name"
+                  value={this.state.first_name} onChange={this.setFirstName} required={true} />
+              </div>
 
-                <div className="form-group">
-                  <label htmlFor="last_name">Last Name</label>
-                  <input type="text" name="last_name" className="form-control" id="last_name"
-                    value={this.state.last_name} onChange={this.setLastName} required={true} />
-                </div>
+              <div className="form-group">
+                <label htmlFor="last_name">Last Name</label>
+                <input type="text" name="last_name" className="form-control" id="last_name"
+                  value={this.state.last_name} onChange={this.setLastName} required={true} />
+              </div>
 
-                <div className="form-group">
-                  <label htmlFor="department">Department</label>
-                  <select className="form-control" name="department"
-                          required={true} value={this.state.department} onChange={this.setDepartment}>
-                    <option value=""></option>
-                    { this.departmentOptions().map(this.renderOption) }
-                  </select>
-                </div>
+              <div className="form-group">
+                <label htmlFor="department">Department</label>
+                <select className="form-control" name="department"
+                        required={true} value={this.state.department} onChange={this.setDepartment}>
+                  <option value=""></option>
+                  { this.departmentOptions().map(this.renderOption) }
+                </select>
+              </div>
 
-                <div className="form-group">
-                  <label htmlFor="profile_image">Clean, Recognizable Image of You</label>
-                  <input type="file" name="profile_image" id="profile_image" onChange={this.handleFile} placeholder="X" required={imageRequired} />
-                  <img src={this.state.dataUri} className="setup-image" />
-                </div>
+              <div className="form-group">
+                <label htmlFor="profile_image">Clean, Recognizable Image of You</label>
+                <input type="file" name="profile_image" id="profile_image" onChange={this.handleFile} placeholder="X" required={imageRequired} />
+                <img src={this.state.dataUri} className="setup-image" />
+              </div>
 
-                <button className="btn btn-primary btn-block">{ buttonText }</button>
-              </form>
-            </div>
+              <button className="btn btn-primary btn-block">{ buttonText }</button>
+            </form>
           </div>
         </div>
-      </div>
     );
   }
 

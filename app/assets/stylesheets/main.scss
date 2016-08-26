@@ -2,53 +2,71 @@
 
 @import "bootstrap";
 
-#person-image-container {
-  @include make-row();
-  height: 40%;
-  overflow: hidden;
+section {
+  border: 0;
+  border-radius: 10px;
+  background: white;
+  width: 450px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(58, 58, 58, 0.25);
+}
 
-  padding-top: 5%;
-  padding-bottom: 5%;
+  section.people {
+    width: 748px;
+    padding: 0 0 15px 0;
+  }
+
+  section.main {
+    width: 450px;
+    padding: 40px 0 15px 0;
+  }
+
+#person-image-container {
+  margin: 0 auto;
+
+  height: 200px;
+  width: 200px;
+
+  border: 8px solid #ccc;
+  border-radius: 50%;
 }
 
 #question-container {
-  @include make-row();
-  height: 60%;
+  margin: 35px;
 
-  header, ul {
-    @include make-xs-column(12);
-    @include make-sm-column(6);
-    @include make-sm-column-offset(3);
-    font-size: 21px;
-    font-size: 1.5em;
-    height: 1.5em;
-    line-height: 1.5em;
-  }
   header {
+    font-size: 22px;
+    font-weight: 400;
     text-align: center;
 
-    color: white;
-    background-color: rgba(0,0,0, 0.5);
   }
 
   ul {
+    margin-top: 30px;
     @include list-unstyled();
 
     li {
-      margin: 14px;
+    cursor: pointer;
+      float: none !important;
+      position: static;
+      padding: 10px;
       text-align: center;
-      cursor: pointer;
+      font-size: 18px;
+  //    background-color: rgba(82, 164, 209, 1);
 
-      color: white;
-      background-color: rgba(0,0,0,0.5);
+      &:hover {
+        border-bottom: 5px inset #F5B128;
+    //    transition: background-color 0.25s ease-in-out #52a4d1;
+        transition:all .3s ease;
+        transform: scale(1.1);
+
+      }
     }
   }
 }
 
 // Setup
 #setup-person {
-  margin-top: 15px;
-
   .setup-image {
     display: block;
     height: 120px;
@@ -87,36 +105,47 @@
   }
 }
 
-#stats {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-
-  padding: 5px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+.nav-container {
+//  background-color: #465866;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+//  border-bottom: 4px solid #46D7C6;
 }
 
-#logout, #settings {
-  z-index: 1000;
+#stats {
   position: absolute;
-  top: 15px;
-
-  padding: 5px;
+  top: 0;
+  right: 0;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #3598DC;
+}
+
+#logout, #settings, #stats {
+  z-index: 1000;
+
+  padding: 20px;
+  color: white;
+  display: inline-block;
+  border-bottom: 4px solid #46D7C6;
+
+  &:hover {
+     transition: all .2s ease-in-out;
+     transform: scale(1.2);
+  }
 
   a {
     color: white;
+    text-decoration: none;
   }
 }
 
 #logout {
-  left: 15px;
+  background-color: #36485C;
 }
 
 #settings {
-  left: 80px;
+  margin: 0 0 0 -4px;
+  background-color: #9D58B5;
 }
 
 // Generic Helpers
@@ -133,4 +162,94 @@
 
 [data-react-class] {
   display: inline;
+}
+
+// overides
+.panel {
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+.panel-heading, .title-header, .panel-title {
+  padding: 25px 15px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border: none;
+  font-size: 24px;
+    h1 {
+      font-size: 24px;
+    }
+}
+
+// bg colors
+
+.bg-blue {
+  background-color: #45D6C5 !important;
+}
+
+.bg-orange {
+  background-color: #F5B128 !important;
+}
+
+
+// buttons
+.btn {
+  padding: 20px 10px;
+}
+
+// table
+
+.table {
+  background: #fff;
+  td, th {
+    line-height: 3.42857 !important;
+    padding: 8px 15px !important;
+    border-top: 1px solid #f7f7f9 !important;
+  }
+  tr {
+    &:hover {
+      background-color: #f7f7f9;
+      transition:all .5s;
+    }
+  }
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #f7f7f9 !important;
+  }
+
+// padding styles
+.pt40 {
+  padding-top: 40px;
+}
+
+//form-group
+.form-control {
+  padding: 20px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 3px solid #eeeeee;
+  border-radius: 0;
+  transition: .2s cubic-bezier(.4, 0, .2, 1);
+  color: #898d96;
+
+  select {
+    padding: 30px;
+  }
+
+  input:form-control-focus {
+  border-bottom: 3px solid #337ab7;
+  box-shadow: none !important;
+  }
+
+  label {
+    margin: 10px 0 5px;
+  }
+}
+
+.notification-message {
+  padding:20px !important;
+  border: 0
 }
