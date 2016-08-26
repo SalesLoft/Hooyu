@@ -23,9 +23,6 @@ var config = {
 
 gulp.task('compile-scss', function() {
   return gulp.src(config.sassPath + '/application.scss')
-    .on('error', function(E) {
-      console.log(E);
-    })
     .pipe(sourcemaps.init())
     .pipe(sass({
       errLogToConsole: true,
@@ -34,6 +31,10 @@ gulp.task('compile-scss', function() {
         config.bowerDir + '/bootstrap-sass/assets/stylesheets'
       ]
     }))
+    .on('error', function(E) {
+      console.log(E);
+      this.emit('end');
+    })
     .pipe(config.production ? minifyCss() : util.noop())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./public/stylesheets'));
