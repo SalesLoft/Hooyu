@@ -46,9 +46,6 @@ section {
     @include list-unstyled();
 
     li {
-    //  @include make-xs-column(12);
-    //@include make-sm-column(6);
-    //@include make-sm-column-offset(3);
     cursor: pointer;
       float: none !important;
       position: static;
@@ -58,10 +55,11 @@ section {
   //    background-color: rgba(82, 164, 209, 1);
 
       &:hover {
-        border-bottom: 5px inset #52a4d1;
-    //    transition: background-color 0.25s ease-in-out;
+        border-bottom: 5px inset #F5B128;
+    //    transition: background-color 0.25s ease-in-out #52a4d1;
         transition:all .3s ease;
-      //  transform:rotateY(180deg)
+        transform: scale(1.1);
+
       }
     }
   }
@@ -69,8 +67,6 @@ section {
 
 // Setup
 #setup-person {
-  margin-top: 15px;
-
   .setup-image {
     display: block;
     height: 120px;
@@ -129,7 +125,6 @@ section {
 
   padding: 20px;
   color: white;
-//  background-color: rgba(0, 0, 0, 0.5);
   display: inline-block;
   border-bottom: 4px solid #46D7C6;
 
@@ -201,7 +196,7 @@ section {
 
 // buttons
 .btn {
-  padding: 12px;
+  padding: 20px 10px;
 }
 
 // table
@@ -228,4 +223,33 @@ section {
 // padding styles
 .pt40 {
   padding-top: 40px;
+}
+
+//form-group
+.form-control {
+  padding: 20px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 3px solid #eeeeee;
+  border-radius: 0;
+  transition: .2s cubic-bezier(.4, 0, .2, 1);
+  color: #898d96;
+
+  select {
+    padding: 30px;
+  }
+
+  input:form-control-focus {
+  border-bottom: 3px solid #337ab7;
+  box-shadow: none !important;
+  }
+
+  label {
+    margin: 10px 0 5px;
+  }
+}
+
+.notification-message {
+  padding:20px !important;
+  border: 0
 }
