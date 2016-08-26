@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   root 'quiz#show'
 
   namespace :admin do
-    resources :people, only: [:index]
+    resources :people, only: [:index, :destroy]
   end
 end
