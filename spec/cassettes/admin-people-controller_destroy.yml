@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: head
+    uri: https://hooyu.s3.amazonaws.com/people/profile_images/62c62453a24e7174bd01c10a9c16b06b9e229309/original.pdf
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - ''
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby/1.63.0 ruby/2.2.2 x86_64-darwin15
+      Date:
+      - Fri, 26 Aug 2016 17:14:41 GMT
+      Authorization:
+      - AWS :q1tIMBcEvgQjrnyFOxret5k0okA=
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      X-Amz-Request-Id:
+      - 4477BC30EEBE304D
+      X-Amz-Id-2:
+      - OHVKzyNMW8vOJat/DIFkl82RBlbC4qQief/V5oC9DZZNvcAefCJFkE6WKGW2KYT4KQo43H93aJU=
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 26 Aug 2016 17:14:42 GMT
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 26 Aug 2016 17:14:42 GMT
+recorded_with: VCR 2.9.3

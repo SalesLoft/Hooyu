@@ -10,16 +10,15 @@
         <th></th>
       </tr>
     </thead>
-
-    <tbody>
-      <% @people.each do |person| %>
-      <tr>
-        <td><%= "#{person.first_name} #{person.last_name}" %></td>
-        <td><%= person.email %></td>
-        <td><%= person.department %></td>
-        <td> </td>
-      </tr>
-      <% end %>
-    </tbody>
+  <tbody>
+    <% @people.each do |person| %>
+    <tr>
+      <td><%= "#{person.first_name} #{person.last_name}" %></td>
+      <td><%= person.email %></td>
+      <td><%= person.department %></td>
+      <td><%= button_to "Destroy", admin_person_path(person), method: :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
   </table>
 </section>
