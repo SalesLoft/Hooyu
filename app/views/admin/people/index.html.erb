@@ -16,7 +16,7 @@
       <td><%= "#{person.first_name} #{person.last_name}" %></td>
       <td><%= person.email %></td>
       <td><%= person.department %></td>
-      <td><%= button_to "Destroy", admin_person_path(person), method: :delete %></td>
+      <td><%= button_to "Destroy", admin_person_path(person), method: :delete , class: "destroy-button"%></td>
     </tr>
     <% end %>
   </tbody>
