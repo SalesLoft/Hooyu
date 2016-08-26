@@ -28,7 +28,7 @@ Data is managed through Neo4j: https://neo4j.com/
     a. bundle exec rake db:create.
     b. bundle exec rake db:migrate.
     c. bundle exec rake db:test:prepare.
-9. Confirm all specs pass by running `bundle exec rspec`.
+9. Confirm all specs pass by running bundle exec rspec.
 10. Create an organization through the rails console:
       a. Organization.create(name: "SalesLoft", domain: "salesloft.com", available_departments: [ "Marketing", "Support", "Engineering", "Finance", "Sales", "Leadership", "Account Management", "Implementation", "Sales  Development", "Administration", "Product"]).
 11. Prepare for local front end development:
