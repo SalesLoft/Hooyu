@@ -74,20 +74,13 @@ section {
   }
 }
 
-#done-container {
-  @include make-row();
-
-  header, a {
-    @include make-xs-column(12);
-    margin-top: 20px;
-    font-size: 1.8em;
-    min-height: 3em;
-    line-height: 3em;
-    text-align: center;
-
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+.body-state {
+    min-height: 200px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    display: flex;
 }
 
 #setup-no-org {
