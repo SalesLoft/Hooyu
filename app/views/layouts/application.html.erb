@@ -6,18 +6,19 @@
 
   <%= stylesheet_link_tag "/stylesheets/application.css", media: :all %>
   <%= javascript_include_tag "/javascripts/application.js" %>
-
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div class="container-fluid">
+    <div class="nav-container">
+      <%= react_component "Logout", url: destroy_user_session_path if current_user %>
+      <%= react_component "Settings", url: setup_path %>
+    </div>
     <% if flash[:success] || flash[:error] %>
       <%= react_component "Flasher", success: flash.key?(:success), message: flash[:success] || flash[:error] %>
     <% end %>
-
-    <%= react_component "Logout", url: destroy_user_session_path if current_user %>
-    <%= react_component "Settings", url: setup_path %>
-
     <%= yield %>
   </div>
 </body>
