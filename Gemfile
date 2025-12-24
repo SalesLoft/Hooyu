@@ -28,7 +28,7 @@ end
 
 # db
 gem 'pg'
-gem 'neo4j', '~> 4.1.1'
+gem 'neo4j', '~> 6.1.1'
 
 # env
 gem 'dotenv-rails'
